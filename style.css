@@ -1,0 +1,193 @@
+:root {
+    --color-primary: #0c0e57;
+    --color-secondary: rgb(132, 191, 225);
+    --font-family: Arial, Helvetica, sans-serif;
+    --color-medium: #8f8f8f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    line-height: 1.5;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+section {
+    padding: 5em;
+    background-image: linear-gradient(to right, rgb(132, 191, 225) 50%, rgba(255, 255, 255, 0)), url(./assets//imageBackGround.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.section-header {
+    margin-bottom: 3em;
+}
+
+.section-header h1,
+h6,
+button {
+    color: var(--color-primary);
+}
+
+.section-header>h6 {
+    margin-bottom: 1em;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.section-title>h1 {
+    font-size: 40px;
+}
+
+.controls {
+    display: flex;
+    gap: 20px;
+}
+
+.controls button {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    background: transparent;
+    font-size: 18px;
+    transition: 0.3s all ease-in-out;
+}
+
+.controls button:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.section-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    flex: 1 1 300px;
+    padding: 2em;
+    background-color: white;
+    border-radius: 20px;
+    transition: 0.3s all ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-20px);
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.card-header span {
+    display: inline-flex;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 40px;
+    color: white;
+    background-color: var(--color-secondary);
+    align-items: center;
+    justify-content: center;
+}
+
+.card-header h2 {
+    margin-top: 1.5em;
+    font-size: 20px;
+}
+
+.card-content {
+    text-align: center;
+    color: var(--color-medium);
+    font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+    .section-title>h1 {
+        font-size: 32px;
+    }
+
+    .card {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 3em 1.5em;
+    }
+
+    .section-title>h1 {
+        font-size: 28px;
+    }
+
+    .card {
+        flex: 1 1 100%;
+    }
+
+    .controls {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-header>h6 {
+        font-size: 14px;
+    }
+
+    .section-title>h1 {
+        font-size: 24px;
+    }
+
+    .controls button {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .card-header span {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+
+    .card-header h2 {
+        font-size: 18px;
+    }
+
+    .card-content {
+        font-size: 14px;
+    }
+}
+
+/* ✅ ADDED: Icon hover/tap effect for 3 icons */
+.card-header span.card-icon {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-header span.card-icon:hover,
+.card-header span.card-icon:active {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
